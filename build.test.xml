@@ -191,4 +191,18 @@
             <param>"node_access_rebuild()"</param>
         </drush>
     </target>
+
+    <!-- Generate content to use in Behat. -->
+    <target name="generate-content">
+        <drush
+          command="generate-content"
+          assume="yes"
+          root="${platform.build.dir}"
+          bin="${drush.bin}"
+          verbose="${drush.verbose}">
+          <option name="types">${genc.types}</option>
+          <param>${genc.num.nodes}</param>
+          <param>${genc.max.comments}</param>
+        </drush>
+    </target>
 </project>
